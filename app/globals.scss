@@ -1,16 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  // font-family: /;
+}
+
 html,
 body {
-  max-width: 100vh;
+  background: #1f2731;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
   overflow-x: hidden;
 }
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
+.container {
+  width: 100%;
+  max-width: 1382px;
+  margin-inline: auto;
+  padding-inline: 30px;
 }
