@@ -1,0 +1,130 @@
+.Contact {
+  background: #141a20;
+  color: #fff;
+  padding-bottom: 30px;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 650px;
+  gap: 60px;
+  align-items: center;
+}
+
+.left {
+  max-width: 520px;
+}
+
+.subtitle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #e63946;
+  font-size: 14px;
+  margin-bottom: 20px;
+  span {
+    color: #fff;
+    font-size: 18px;
+  }
+}
+
+.title {
+  font-family: "Playfair Display", serif;
+  font-size: 42px;
+  line-height: 1.2;
+  margin-bottom: 30px;
+}
+
+.label {
+  color: #e63946;
+  margin-top: 24px;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.text {
+  color: #cfd2d6;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.button {
+  margin-top: 30px;
+  background: transparent;
+  border: 1px solid #e63946;
+  color: #fff;
+  padding: 12px 26px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    background: #e63946;
+  }
+}
+
+.card {
+  background: #b12a2f;
+  padding: 32px;
+  border-radius: 2px;
+}
+
+.cardTitle {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #141a20;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  font-size: 16px;
+  color: #141a20;
+}
+
+.socials {
+  display: flex;
+  gap: 14px;
+  margin: 20px 0;
+}
+
+.social {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+}
+
+/* Карта */
+.map {
+  margin-top: 20px;
+  border-radius: 2px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+/* Адаптив */
+@media (max-width: 1100px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    width: 100%;
+  }
+}
