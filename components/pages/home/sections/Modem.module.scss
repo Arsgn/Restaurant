@@ -1,0 +1,80 @@
+.Modem {
+  padding: 100px 0;
+  background: #141a20;
+  color: #fff;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 50px;
+}
+
+.title {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: #ede7e7;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  grid-template-rows: repeat(2, 240px);
+  gap: 20px;
+}
+
+.item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  cursor: pointer;
+
+  img {
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.6)
+    );
+    opacity: 0;
+    transition: 0.4s;
+  }
+
+  &:hover img {
+    transform: scale(1.1);
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+}
+
+.big {
+  grid-row: span 2;
+}
+@media (max-width: 1024px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+
+  .big {
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}

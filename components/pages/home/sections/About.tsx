@@ -23,15 +23,14 @@ export const About: FC = () => {
           <div className={scss.rightSide}>
             <div className={scss.descriptionBox}>
               <p className={scss.description}>
-                Try dishes that will open up new tastes for you and delight
-                your eyes with their appearance. Here you will find a cozy
+                Try dishes that will open up new tastes for you and delight your
+                eyes with their appearance. Here you will find a cozy
                 atmosphere, excellent service and attention to each guest. Book
                 a table now and enjoy a unique experience of taste discovery!
               </p>
             </div>
           </div>
         </div>
-
         <div className={scss.images}>
           <div className={scss.imageWrapper}>
             <Image
@@ -42,7 +41,6 @@ export const About: FC = () => {
               style={{ objectFit: "cover" }}
             />
           </div>
-
           <div className={scss.imageWrapper}>
             <Image
               src="/Frame 16.svg"

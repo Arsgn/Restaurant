@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-block: 20px;
   .btn {
     display: flex;
     align-items: center;
@@ -16,5 +17,19 @@
       font-size: 18px;
       font-weight: 500;
     }
+  }
+  h1 {
+    color: white;
+    font-family: "Courier New", Courier, monospace;
+  }
+  .btn button {
+    background-color: rgba(239, 39, 44, 1);
+    width: 120px;
+    height: 30px;
+    border-radius: 10px;
+    color: white;
+  }
+  p {
+    color: white;
   }
 }

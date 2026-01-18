@@ -8,15 +8,13 @@ export const Welcome: FC = () => {
     <section className={scss.Welcome}>
       <div className={scss.imageWrapper}>
         <Image
-          src="/Frame 15.svg"
+          src="/logo.png"
           alt="Banner"
           fill
           priority
           style={{ objectFit: "cover" }}
         />
-
         <div className={scss.overlay} />
-
         <div className={scss.content}>
           <div className={scss.subtitleWrapper}>
             <Image src="/Frame 10.svg" alt="image" width={90} height={25} />
@@ -30,13 +28,11 @@ export const Welcome: FC = () => {
           </p>
           <button className={scss.button}>RESERVE YOUR TABLE</button>
         </div>
-        {/* Location & Phone */}
         <div className={scss.footerInfo}>
           <div className={scss.item}>
             <span className={scss.label}>Location ------ 📍</span>
             <p>Rua Da Moeda 1g, 1200-275, Portugal</p>
           </div>
-
           <div className={scss.item}>
             <span className={scss.label}>Hotline----- 📞</span>
             <p>+7 771 219 9000</p>
