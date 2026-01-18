@@ -1,0 +1,82 @@
+.Menu {
+  display: flex;
+  justify-content: center;
+  gap: 8rem;
+  padding: 30px;
+
+  .category {
+    .chosen {
+      background: #ef272c;
+      color: white;
+      position: relative;
+      // padding-right: 30px;
+    }
+
+    .chosen::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 10;
+      transform: translateY(-50%);
+      transform: translateX(280%);
+      width: 50px;
+      height: 2px;
+      background-color: white;
+    }
+    p {
+      position: relative;
+      font-family: "Silk Serif", sans-serif;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 100%;
+      letter-spacing: 0%;
+      padding: 18px 90px;
+      text-align: center;
+      color: #ffffff9e;
+      background: #1f2731;
+    }
+
+    p::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 12px;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.6);
+    }
+  }
+  .products {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto;
+    gap: 20px;
+    .product {
+      background: white;
+      height: 250px;
+      .description {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5px 10px;
+        font-family: "Spartan", sans-serif;
+        p {
+          font-family: "Spartan", sans-serif;
+          color: #939393;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 100%;
+          letter-spacing: 1.2px;
+        }
+        .price {
+          color: #ef272c;
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 100%;
+          letter-spacing: 0%;
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,7 @@
 "use client";
 import { FC } from "react";
 import scss from "./Header.module.scss";
+import Link from "next/link";
 
 const Header: FC = () => {
   return (
@@ -10,8 +11,8 @@ const Header: FC = () => {
           <h1>Restaurant</h1>
           <nav>
             <a href="">Interior</a>
-            <a href="">Menu</a>
-            <a href="">About</a>
+            <Link href="/menu">Menu</Link>
+            <Link href="/details">About</Link>
             <a href="">Contacts</a>
           </nav>
           <div className={scss.btn}>
