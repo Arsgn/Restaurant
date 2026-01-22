@@ -19,7 +19,6 @@ export const About: FC = () => {
               Cafesio Flavors
             </h2>
           </div>
-
           <div className={scss.rightSide}>
             <div className={scss.descriptionBox}>
               <p className={scss.description}>

@@ -1,7 +1,7 @@
 .About {
   background: #1a1d2e;
   padding-block: 40px;
-  padding-inline: 20px; 
+  padding-inline: 20px;
 
   .content {
     display: grid;
@@ -21,7 +21,8 @@
       align-items: center;
       gap: 15px;
       margin-bottom: 30px;
-
+      h2 {
+      }
       .line {
         width: 60px;
         height: 2px;
@@ -33,13 +34,12 @@
       }
 
       .subtitle {
-        font-size: 16px;
+        font-size: 22px;
         font-weight: 400;
         font-style: italic;
         color: white;
         letter-spacing: 2px;
-        margin: 0;
-
+        font-family: Shalimar;
         @media (max-width: 650px) {
           font-size: 14px;
         }
@@ -47,6 +47,7 @@
     }
 
     .title {
+      font-family: Silk Serif;
       font-size: 48px;
       font-weight: 700;
       color: white;

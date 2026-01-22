@@ -4,7 +4,7 @@
   align-items: center;
   gap: 60px;
   padding-block: 80px;
-  padding-inline: 20px; 
+  padding-inline: 20px;
 
   @media (max-width: 950px) {
     flex-direction: column;
@@ -18,12 +18,19 @@
 }
 
 .content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  p {
+    font-size: 16px;
+    width: 360px;
+    color: rgba(207, 202, 202, 0.911);
+  }
   h2 {
+    width: 420px;
     font-size: 40px;
     font-weight: 700;
-    margin: 18px 0 16px;
     color: white;
-
     @media (max-width: 950px) {
       font-size: 34px;
     }
@@ -33,18 +40,11 @@
     }
   }
 
-  p {
-    font-size: 16px;
-    line-height: 1.7;
-    color: white;
-
-    @media (max-width: 650px) {
-      font-size: 14px;
-      line-height: 1.5;
-    }
+  @media (max-width: 650px) {
+    font-size: 14px;
+    line-height: 1.5;
   }
 }
-
 .subtitleWrapper {
   display: inline-flex;
   align-items: center;
@@ -52,9 +52,10 @@
   padding: 8px 14px;
 
   p {
-    font-size: 19px;
+    font-size: 22px;
     font-weight: 600;
-    color: #ff7a45;
+    font-family: Shalimar;
+    // color: #ff7a45;
 
     @media (max-width: 650px) {
       font-size: 16px;
@@ -75,13 +76,13 @@
 .images {
   display: flex;
   gap: 24px;
-  flex-wrap: wrap; 
-  justify-content: center; 
+  // flex-wrap: wrap;
+  justify-content: center;
 
   img {
     transition: 0.5s;
-    width: 100%; 
-    max-width: 200px; 
+    width: 100%;
+    max-width: 200px;
     height: auto;
 
     &:hover {
