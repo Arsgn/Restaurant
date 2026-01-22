@@ -1,18 +1,26 @@
 .Contact {
   background: #141a20;
   color: #fff;
-  padding-bottom: 30px;
+  padding: 30px 20px; 
 }
 
 .wrapper {
   display: grid;
   grid-template-columns: 1fr 650px;
   gap: 60px;
-  align-items: center;
+  align-items: start;
+
+  @media (max-width: 1100px) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 }
 
 .left {
   max-width: 520px;
+  @media (max-width: 650px) {
+    max-width: 100%;
+  }
 }
 
 .subtitle {
@@ -22,6 +30,7 @@
   color: #e63946;
   font-size: 14px;
   margin-bottom: 20px;
+
   span {
     color: #fff;
     font-size: 18px;
@@ -33,6 +42,14 @@
   font-size: 42px;
   line-height: 1.2;
   margin-bottom: 30px;
+
+  @media (max-width: 650px) {
+    font-size: 32px;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 26px;
+  }
 }
 
 .label {
@@ -46,6 +63,10 @@
   color: #cfd2d6;
   font-size: 18px;
   line-height: 1.6;
+
+  @media (max-width: 650px) {
+    font-size: 16px;
+  }
 }
 
 .button {
@@ -67,6 +88,10 @@
   background: #b12a2f;
   padding: 32px;
   border-radius: 2px;
+
+  @media (max-width: 650px) {
+    padding: 20px;
+  }
 }
 
 .cardTitle {
@@ -82,6 +107,10 @@
   margin-bottom: 14px;
   font-size: 16px;
   color: #141a20;
+
+  @media (max-width: 650px) {
+    font-size: 14px;
+  }
 }
 
 .socials {
@@ -103,9 +132,13 @@
   &:hover {
     background: rgba(255, 255, 255, 0.15);
   }
+
+  @media (max-width: 400px) {
+    width: 30px;
+    height: 30px;
+  }
 }
 
-/* Карта */
 .map {
   margin-top: 20px;
   border-radius: 2px;
@@ -118,10 +151,10 @@
   }
 }
 
-/* Адаптив */
-@media (max-width: 1100px) {
-  .wrapper {
-    grid-template-columns: 1fr;
+@media (max-width: 650px) {
+  .button {
+    width: 100%;
+    text-align: center;
   }
 
   .card {

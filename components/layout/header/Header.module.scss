@@ -1,35 +1,110 @@
-.content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-block: 20px;
-  .btn {
+.Header {
+  background: #141a20;
+  color: white;
+
+  .content {
     display: flex;
     align-items: center;
-    gap: 20px;
-  }
-  nav {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    a {
-      color: white;
-      font-size: 18px;
-      font-weight: 500;
+    justify-content: space-between;
+    padding: 20px;
+    position: relative;
+
+
+    h1{
+    color: white;
     }
-  }
-  h1 {
-    color: white;
-    font-family: "Courier New", Courier, monospace;
-  }
-  .btn button {
-    background-color: rgba(239, 39, 44, 1);
-    width: 120px;
-    height: 30px;
-    border-radius: 10px;
-    color: white;
-  }
-  p {
-    color: white;
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+
+      a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+
+        &:hover {
+          color: #ef272c;
+        }
+      }
+
+      @media (max-width: 650px) {
+        display: none; // скрываем на мобильных
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #141a20;
+        gap: 20px;
+        padding: 20px 0;
+
+        &.active {
+          display: flex; 
+        }
+      }
+    }
+
+    .burger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 28px;
+      height: 22px;
+      cursor: pointer;
+
+      span {
+        display: block;
+        height: 3px;
+        width: 100%;
+        background: white;
+        border-radius: 2px;
+        transition: 0.3s;
+      }
+
+      &.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      &.active span:nth-child(2) {
+        opacity: 0;
+      }
+      &.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+
+      @media (max-width: 650px) {
+        display: flex;
+      }
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      button {
+        background-color: rgba(239, 39, 44, 1);
+        width: 120px;
+        height: 30px;
+        border-radius: 10px;
+        color: white;
+      }
+
+      .lang {
+        cursor: pointer;
+        font-weight: 600;
+      }
+
+      @media (max-width: 650px) {
+        gap: 10px;
+
+        button {
+          width: 90px;
+          height: 28px;
+          font-size: 12px;
+        }
+      }
+    }
   }
 }

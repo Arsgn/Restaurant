@@ -1,13 +1,18 @@
 .About {
   background: #1a1d2e;
-  // padding: 200px 150px 50px 150px;
   padding-block: 40px;
+  padding-inline: 20px; 
+
   .content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
-    // margin-bottom: 80px;
     align-items: flex-start;
+
+    @media (max-width: 950px) {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
   }
 
   .leftSide {
@@ -21,6 +26,10 @@
         width: 60px;
         height: 2px;
         background: #d72c2c;
+
+        @media (max-width: 650px) {
+          width: 40px;
+        }
       }
 
       .subtitle {
@@ -30,6 +39,10 @@
         color: white;
         letter-spacing: 2px;
         margin: 0;
+
+        @media (max-width: 650px) {
+          font-size: 14px;
+        }
       }
     }
 
@@ -39,6 +52,14 @@
       color: white;
       line-height: 1.3;
       margin: 0;
+
+      @media (max-width: 950px) {
+        font-size: 40px;
+      }
+
+      @media (max-width: 650px) {
+        font-size: 32px;
+      }
     }
   }
 
@@ -47,15 +68,29 @@
     align-items: flex-start;
     justify-content: flex-end;
 
+    @media (max-width: 950px) {
+      justify-content: flex-start;
+    }
+
     .descriptionBox {
       padding: 40px;
       max-width: 500px;
+
+      @media (max-width: 650px) {
+        padding: 20px;
+        max-width: 100%;
+      }
 
       .description {
         font-size: 16px;
         line-height: 1.8;
         color: rgba(255, 255, 255, 0.85);
         margin: 0;
+
+        @media (max-width: 650px) {
+          font-size: 14px;
+          line-height: 1.6;
+        }
       }
     }
   }
@@ -64,6 +99,12 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
+    margin-top: 40px;
+
+    @media (max-width: 650px) {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
 
     .imageWrapper {
       position: relative;
