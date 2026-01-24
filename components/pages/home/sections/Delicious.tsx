@@ -87,8 +87,8 @@ const Delicious: FC = () => {
                 {selectedProduct.extras?.length > 0 && (
                   <div className={scss.extrasBox}>
                     <h4>Extras</h4>
-                    {selectedProduct.extras?.map((extra, i) => (
-                      <p key={i}>
+                    {selectedProduct.extras.map((extra: any, index: number) => (
+                      <p key={`extra-${index}`}>
                         {extra.title} - ${extra.price}
                       </p>
                     ))}
@@ -98,8 +98,8 @@ const Delicious: FC = () => {
                 {selectedProduct.drinks?.length > 0 && (
                   <div className={scss.extrasBox}>
                     <h4>Drinks</h4>
-                    {selectedProduct.drinks?.map((drink, i) => (
-                      <p key={i}>
+                    {selectedProduct.drinks.map((drink: any, index: number) => (
+                      <p key={`drink-${index}`}>
                         {drink.title} - ${drink.price}
                       </p>
                     ))}
