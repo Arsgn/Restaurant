@@ -1,9 +1,8 @@
 .Delicious {
-  padding: 100px 20px; // горизонтальные паддинги для мобильных
+  padding: 100px 20px; 
   background: #0b0b0b;
   color: #fff;
 
-  /* ===== TITLE ===== */
   .title {
     text-align: center;
     margin-bottom: 70px;
@@ -107,7 +106,6 @@
     }
   }
 
-  /* ===== RIGHT MENU ===== */
   .Allmenu {
     flex: 1;
     display: grid;
@@ -166,7 +164,6 @@
     }
   }
 
-  /* ===== BOTTOM ===== */
   .full {
     grid-column: 1 / -1;
     text-align: center;
@@ -198,5 +195,87 @@
     text-align: center;
     color: #888;
     padding: 40px 0;
+  }
+}
+
+
+.details {
+  grid-column: 1 / -1;
+  background: #151515;
+  padding: 30px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  color: #fff;
+
+  .box_menu1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+      font-size: 24px;
+      font-weight: 600;
+      margin: 0;
+
+      @media (max-width: 650px) {
+        font-size: 20px;
+      }
+    }
+
+    span {
+      font-size: 20px;
+      color: #e50914;
+      font-weight: 600;
+
+      @media (max-width: 650px) {
+        font-size: 18px;
+      }
+    }
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ccc;
+    margin: 8px 0 0 0;
+  }
+
+  button {
+    align-self: flex-start;
+    margin-top: 16px;
+    background: transparent;
+    border: 1px solid #c9a96a;
+    padding: 8px 20px;
+    border-radius: 20px;
+    color: #c9a96a;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background: #c9a96a;
+      color: #000;
+    }
+  }
+
+  .extrasBox {
+    margin-top: 20px;
+
+    h4 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #f5f2ee;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #ddd;
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
   }
 }

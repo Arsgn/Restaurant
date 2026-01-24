@@ -1,5 +1,3 @@
-// Добавьте это в ваш type.d.ts файл
-
 namespace CATEGORY {
   type Category = {
     id: number;
@@ -9,7 +7,7 @@ namespace CATEGORY {
   type GetCategoriesRes = {
     success?: boolean;
     data?: Category[];
-  } | Category[]; // Поддержка обоих форматов ответа
+  } | Category[];
 
   type GetCategoriesReq = void;
 
@@ -23,7 +21,6 @@ namespace CATEGORY {
   };
 }
 
-// Также обновите MENU namespace для поддержки category
 namespace MENU {
   type Menu = {
     id: number;

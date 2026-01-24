@@ -23,15 +23,16 @@ const Menu: FC = () => {
     : categoryData?.data || [];
 
   useEffect(() => {
-    if (categories.length && selectedCategoryId === null) {
+    if (!selectedCategoryId && categories.length > 0) {
       setSelectedCategoryId(categories[0].id);
     }
   }, [categories, selectedCategoryId]);
 
   const filteredMenus =
-    selectedCategoryId === null
-      ? menus
-      : menus.filter((item) => item.categoryId === selectedCategoryId);
+  selectedCategoryId === null
+    ? menus
+    : menus.filter((item) => item.category?.id === selectedCategoryId);
+
 
   if (menuLoading || categoryLoading) {
     return <div className="container">Loading...</div>;
@@ -39,7 +40,7 @@ const Menu: FC = () => {
 
   return (
     <section className={scss.Menu}>
-      {/* CATEGORY */}
+
       <aside className={scss.category}>
         {categories.map((cat) => (
           <h3
@@ -59,6 +60,58 @@ const Menu: FC = () => {
         {selectedProduct && (
           <>
             <div className={scss.details}>
+
+              <div className={scss.mainInfo}>
+                <img
+                  src={selectedProduct.image || "/menu.svg"}
+                  alt={selectedProduct.title}
+                />
+                <div className={scss.header}>
+                  <div>
+                    <h3>{selectedProduct.title}</h3>
+                    <p style={{ color: "#BBBBBB" }}>
+                      {selectedProduct.description}
+                    </p>
+                  </div>
+                  <p className={scss.detailPrice}>${selectedProduct.price}</p>
+                </div>
+              </div>
+
+              <div className={scss.extrasBox}>
+                <h4 className={scss.extrasTitle}>Extras</h4>
+                {selectedProduct.extras?.length ? (
+                  selectedProduct.extras.map((extra, index) => (
+                    <div
+                      className={scss.extraRow}
+                      key={`${extra.title ?? extra.title}-${index}`}
+                    >
+                      <span>{extra.title ?? extra.title}</span>
+                      <span>${extra.price}</span>
+                    </div>
+                  ))
+                ) : (
+                  <p className={scss.empty}>No extras</p>
+                )}
+
+                <h4 className={scss.extrasTitle}>Drinks</h4>
+                {selectedProduct.drinks?.length ? (
+                  selectedProduct.drinks.map((drink, index) => (
+                    <div
+                      className={scss.extraRow}
+                      key={`${drink.title ?? drink.title}-${index}`}
+                    >
+                      <span>{drink.title ?? drink.title}</span>
+                      <span>${drink.price}</span>
+                    </div>
+                  ))
+                ) : (
+                  <p className={scss.empty}>No drinks</p>
+                )}
+              </div>
+            </div>
+
+            <h2 className={scss.similar}>Similar queries</h2>
+
               <div className={scss.info}>
                 {/* details */}
                 <div className={scss.mainInfo}>
@@ -103,9 +156,10 @@ const Menu: FC = () => {
               </div>
             </div>
             <h1>Similar gueries</h1>
+
           </>
         )}
-        {/* product */}
+
         <div className={scss.products}>
           {filteredMenus.map((item) => (
             <div
@@ -114,7 +168,6 @@ const Menu: FC = () => {
               onClick={() => setSelectedProduct(item)}
             >
               <img src={item.image || "/menu.svg"} alt={item.title} />
-
               <div className={scss.description}>
                 <p>{item.title}</p>
                 <span className={scss.price}>${item.price}</span>
