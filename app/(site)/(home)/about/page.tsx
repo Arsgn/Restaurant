@@ -1,9 +1,9 @@
-import Menu from "@/components/pages/menu/Menu";
+import { About } from "@/components/pages/home/sections/About";
 
 const page = () => {
   return (
     <div>
-      <Menu />
+      <About />
     </div>
   );
 };

@@ -34,7 +34,7 @@ const Header: FC = () => {
     return () => clearTimeout(timer);
   }, [searchQuery]);
 
-  const { data: searchData, isLoading } = useSearchMenusQuery(
+  const { data: searchData } = useSearchMenusQuery(
     debouncedSearch || "",
   );
 
