@@ -1,15 +1,15 @@
 namespace MENU {
-  export type Extra = {
+  type Extra = {
     title: string;
     price: number;
   };
 
-  export type Drink = {
+  type Drink = {
     title: string;
     price: number;
   };
 
-  export type Menu = {
+  type Menu = {
     id: number;
     title: string;
     description: string;
@@ -21,25 +21,25 @@ namespace MENU {
       id: number;
       name: string;
     };
-    extras: Extra[];   
-    drinks: Drink[];   
+    extras: Extra[];
+    drinks: Drink[];
   };
 
-  export type GetMenusRes = {
+  type GetMenusRes = {
     success: boolean;
     data: Menu[];
   };
 
-  export type GetMenusReq = {
+  type GetMenusReq = {
     search?: string;
   };
 
-  export type CreateMenusRes = {
+  type CreateMenusRes = {
     success: boolean;
     data: Menu;
   };
 
-  export type CreateMenusReq = {
+  type CreateMenusReq = {
     title: string;
     description: string;
     price: number;
@@ -48,12 +48,12 @@ namespace MENU {
     categoryId?: number;
   };
 
-  export type UpdateMenuRes = {
+  type UpdateMenuRes = {
     success: boolean;
     updatedMenu: Menu;
   };
 
-  export type UpdateMenuReq = {
+  type UpdateMenuReq = {
     id: number;
     title?: string;
     description?: string;
@@ -63,12 +63,12 @@ namespace MENU {
     categoryId?: number;
   };
 
-  export type DeleteMenuRes = {
+  type DeleteMenuRes = {
     success: boolean;
     delMenu: Menu;
   };
 
-  export type DeleteMenuReq = {
+  type DeleteMenuReq = {
     id: number;
   };
 }

@@ -27,7 +27,7 @@ const useSearchMenusQuery = (searchQuery: string) => {
 
 const useCreateMenuMutation = () => {
   return useMutation<MENU.CreateMenusRes, Error, MENU.CreateMenusReq>({
-    mutationFn: async (data) => {
+    mutationFn: async (data: MENU.CreateMenusReq) => {
       const response = await api.post("/menu/post", data);
       return response.data;
     },
@@ -37,7 +37,7 @@ const useCreateMenuMutation = () => {
 
 const useUpdateMenuMutation = () => {
   return useMutation<MENU.UpdateMenuRes, Error, MENU.UpdateMenuReq>({
-    mutationFn: async (data) => {
+    mutationFn: async (data: MENU.UpdateMenuReq) => {
       const response = await api.put(`/menu/put/${data.id}`, {
         title: data.title,
         description: data.description,
@@ -54,7 +54,7 @@ const useUpdateMenuMutation = () => {
 
 const useDeleteMenuMutation = () => {
   return useMutation<MENU.DeleteMenuRes, Error, MENU.DeleteMenuReq>({
-    mutationFn: async (data) => {
+    mutationFn: async (data: MENU.DeleteMenuReq) => {
       const response = await api.delete(`/menu/delete/${data.id}`);
       return response.data;
     },

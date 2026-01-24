@@ -18,7 +18,7 @@ const useCreateCategoryMutation = () => {
     Error,
     CATEGORY.CreateCategoryReq
   >({
-    mutationFn: async (data) => {
+    mutationFn: async (data: CATEGORY.CreateCategoryReq) => {
       const response = await api.post("/category/post", data);
       return response.data;
     },
