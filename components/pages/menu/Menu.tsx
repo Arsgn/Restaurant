@@ -40,6 +40,7 @@ const Menu: FC = () => {
 
   return (
     <section className={scss.Menu}>
+
       <aside className={scss.category}>
         {categories.map((cat) => (
           <h3
@@ -59,6 +60,7 @@ const Menu: FC = () => {
         {selectedProduct && (
           <>
             <div className={scss.details}>
+
               <div className={scss.mainInfo}>
                 <img
                   src={selectedProduct.image || "/menu.svg"}
@@ -109,6 +111,52 @@ const Menu: FC = () => {
             </div>
 
             <h2 className={scss.similar}>Similar queries</h2>
+
+              <div className={scss.info}>
+                {/* details */}
+                <div className={scss.mainInfo}>
+                  <img
+                    src={selectedProduct.image || "/menu.svg"}
+                    alt={selectedProduct.title}
+                  />
+                  <div className={scss.header}>
+                    <div>
+                      <h3>{selectedProduct.title}</h3>
+                      <p style={{ color: "#BBBBBB" }}>
+                        {selectedProduct.description}
+                      </p>
+                    </div>
+                    <p className={scss.detailPrice}>${selectedProduct.price}</p>
+                  </div>
+                </div>
+
+                <div className={scss.extrasBox}>
+                  <h4 className={scss.extrasTitle}>Extras</h4>
+
+                  <div className={scss.extraRow}>
+                    <span>Cherry</span>
+                    <span>$0.90</span>
+                  </div>
+                  <div className={scss.extraRow}>
+                    <span>Cherry</span>
+                    <span>$0.90</span>
+                  </div>
+
+                  <h4 className={scss.extrasTitle}>Drinks</h4>
+
+                  <div className={scss.extraRow}>
+                    <span>Coca Cola</span>
+                    <span>$0.90</span>
+                  </div>
+                  <div className={scss.extraRow}>
+                    <span>Coca Cola</span>
+                    <span>$0.90</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h1>Similar gueries</h1>
+
           </>
         )}
 
