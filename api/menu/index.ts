@@ -1,22 +1,34 @@
-// services/menu/index.ts
-import { useMutation, useQuery } from '@tanstack/react-query';
-import { api } from '..';
+import { useMutation, useQuery } from "@tanstack/react-query";
+import { api } from "..";
 
 const useGetMenusQuery = () => {
   return useQuery<MENU.GetMenusRes>({
-    queryKey: ['menus'],
+    queryKey: ["menus"],
     queryFn: async () => {
-      const response = await api.get('/menu/get'); // ✅ Было /get-all
+      const response = await api.get("/menu/get");
       return response.data;
     },
     retry: false,
   });
 };
 
+const useSearchMenusQuery = (searchQuery: string) => {
+  return useQuery<MENU.GetMenusRes>({
+    queryKey: ["menus", "search", searchQuery],
+    queryFn: async () => {
+      const response = await api.get("/menu/search", {
+        params: { search: searchQuery },
+      });
+      return response.data;
+    },
+    enabled: searchQuery.length > 0,
+  });
+};
+
 const useCreateMenuMutation = () => {
   return useMutation<MENU.CreateMenusRes, Error, MENU.CreateMenusReq>({
     mutationFn: async (data) => {
-      const response = await api.post('/menu/post', data); // ✅ Было /create
+      const response = await api.post("/menu/post", data);
       return response.data;
     },
     retry: false,
@@ -26,8 +38,7 @@ const useCreateMenuMutation = () => {
 const useUpdateMenuMutation = () => {
   return useMutation<MENU.UpdateMenuRes, Error, MENU.UpdateMenuReq>({
     mutationFn: async (data) => {
-      const response = await api.put(`/menu/put`, {  
-        id: data.id,  
+      const response = await api.put(`/menu/put/${data.id}`, {
         title: data.title,
         description: data.description,
         price: data.price,
@@ -44,20 +55,20 @@ const useUpdateMenuMutation = () => {
 const useDeleteMenuMutation = () => {
   return useMutation<MENU.DeleteMenuRes, Error, MENU.DeleteMenuReq>({
     mutationFn: async (data) => {
-      const response = await api.delete(`/menu/delete/${data.id}`); // ✅ Уже правильно
+      const response = await api.delete(`/menu/delete/${data.id}`);
       return response.data;
     },
     retry: false,
   });
 };
 
-// Удалите useToggleMenuMutation если нет такого роута на бэкенде
-// const useToggleMenuMutation = () => { ... }
 
 export {
   useGetMenusQuery,
+  useSearchMenusQuery,
   useCreateMenuMutation,
   useUpdateMenuMutation,
   useDeleteMenuMutation,
-  // useToggleMenuMutation, // ❌ Удалите, такого роута нет
 };
+
+

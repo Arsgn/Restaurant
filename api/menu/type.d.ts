@@ -1,82 +1,74 @@
-// type.d.ts
 namespace MENU {
-  // Response types
-  type GetMenusRes = {
-    success: boolean;
-    data: Array<{
-      id: number;
-      title: string;
-      description: string;
-      completed: boolean;
-      price: number;
-      image: string;
-    }>;
+  export type Extra = {
+    title: string;
+    price: number;
   };
 
-  type GetMenusReq = void;
-
-  type CreateMenusRes = {
-    success: boolean;
-    data: Array<{
-      id: number;
-      title: string;
-      description: string;
-      completed: boolean;
-      price: number;
-      image: string;
-    }>;
+  export type Drink = {
+    title: string;
+    price: number;
   };
 
-  type CreateMenusReq = {
+  export type Menu = {
+    id: number;
     title: string;
     description: string;
     price: number;
     image: string;
-  };
-
-  type UpdateMenuRes = {
-    success: boolean;
-    data: {
+    ingredients: string;
+    categoryId: number;
+    category: {
       id: number;
-      title: string;
-      description: string;
-      completed: boolean;
-      price: number;
-      image: string;
+      name: string;
     };
+    extras: Extra[];   
+    drinks: Drink[];   
   };
 
-  type UpdateMenuReq = {
+  export type GetMenusRes = {
+    success: boolean;
+    data: Menu[];
+  };
+
+  export type GetMenusReq = {
+    search?: string;
+  };
+
+  export type CreateMenusRes = {
+    success: boolean;
+    data: Menu;
+  };
+
+  export type CreateMenusReq = {
+    title: string;
+    description: string;
+    price: number;
+    image: string;
+    ingredients?: string;
+    categoryId?: number;
+  };
+
+  export type UpdateMenuRes = {
+    success: boolean;
+    updatedMenu: Menu;
+  };
+
+  export type UpdateMenuReq = {
     id: number;
     title?: string;
     description?: string;
-    completed?: boolean;
     price?: number;
     image?: string;
+    ingredients?: string;
+    categoryId?: number;
   };
 
-  type DeleteMenuRes = {
+  export type DeleteMenuRes = {
     success: boolean;
-    message: string;
+    delMenu: Menu;
   };
 
-  type DeleteMenuReq = {
-    id: number;
-  };
-
-  type ToggleMenuRes = {
-    success: boolean;
-    data: {
-      id: number;
-      title: string;
-      description: string;
-      completed: boolean;
-      price: number;
-      image: string;
-    };
-  };
-
-  type ToggleMenuReq = {
+  export type DeleteMenuReq = {
     id: number;
   };
 }
