@@ -34,9 +34,7 @@ const Header: FC = () => {
     return () => clearTimeout(timer);
   }, [searchQuery]);
 
-  const { data: searchData } = useSearchMenusQuery(
-    debouncedSearch || "",
-  );
+  const { data: searchData } = useSearchMenusQuery(debouncedSearch || "");
 
   return (
     <header className={scss.Header}>
@@ -63,19 +61,23 @@ const Header: FC = () => {
                 className={scss.searchInput}
                 onFocus={() => setShowSearch(true)}
               />
-              {debouncedSearch &&
-                searchData &&
-                (searchData.data as MENU.Menu[]).map((item) => (
-                  <Link
-                    key={item.id}
-                    href={`/menu?productId=${item.id}`}
-                    className={scss.searchItem}
-                  >
-                    <h4>{item.title}</h4>
-                    <p>{item.description}</p>
-                    <span>${item.price}</span>
-                  </Link>
-                ))}
+              {debouncedSearch && searchData && (
+                <div className={scss.searchResults}>
+                  {(searchData.data as MENU.Menu[]).map((item) => (
+                    <Link
+                      key={item.id}
+                      href={`/menu?productId=${item.id}`}
+                      className={scss.searchItem}
+                    >
+                      <div>
+                        <h4>{item.title}</h4>
+                        <p>{item.description}</p>
+                      </div>
+                      <span>${item.price}</span>
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
 
             <button
