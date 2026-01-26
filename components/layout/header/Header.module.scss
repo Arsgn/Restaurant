@@ -53,18 +53,18 @@
       position: relative;
 
       .searchInput {
-        width: 220px;
+        width: 160px;
         padding: 6px 12px;
         background: transparent;
-        border: 2px solid #ef272c;
         border-radius: 6px;
-        color: #fff;
+        background: #ef272c;
+        color: #ffffff;
         font-size: 14px;
         outline: none;
         transition: 0.3s;
 
         &::placeholder {
-          color: #ffffff80;
+          color: #ffffff;
         }
 
         &:focus {

@@ -10,7 +10,7 @@ const translations = {
     about: "About Us",
     menu: "Menu",
     contacts: "Contacts",
-    searchPlaceholder: "Search menu...",
+    searchPlaceholder: "Search",
   },
   ru: {
     interior: "Интерьер",
@@ -48,7 +48,7 @@ const Header: FC = () => {
             <Link href="/">{t.interior}</Link>
             <Link href="/about">{t.about}</Link>
             <Link href="/menu">{t.menu}</Link>
-            <Link href="/contacts">{t.contacts}</Link>
+            <Link href="/address">{t.contacts}</Link>
           </nav>
 
           <div className={scss.actions}>
