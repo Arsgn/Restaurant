@@ -12,7 +12,7 @@ const Delicious: FC = () => {
     useGetCategoriesQuery();
 
   const [selectedCategoryId, setSelectedCategoryId] = useState<number | null>(
-    null
+    null,
   );
 
   if (menuLoading || categoryLoading) {
@@ -37,7 +37,6 @@ const Delicious: FC = () => {
   return (
     <section className={scss.Delicious}>
       <div className="container">
-        {/* ===== TITLE ===== */}
         <div className={scss.title}>
           <div className={scss.content}>
             <Image src="/Frame 9.svg" alt="left" width={60} height={30} />
@@ -48,19 +47,16 @@ const Delicious: FC = () => {
         </div>
 
         <div className={scss.menu_block}>
-          {/* ===== LEFT CATEGORIES ===== */}
           <div className={scss.menu}>
             {categories.map((cat) => {
               const count = menus.filter(
-                (m) => m.category?.id === cat.id
+                (m) => m.category?.id === cat.id,
               ).length;
 
               return (
                 <p
                   key={cat.id}
-                  className={
-                    selectedCategoryId === cat.id ? scss.active : ""
-                  }
+                  className={selectedCategoryId === cat.id ? scss.active : ""}
                   onClick={() => setSelectedCategoryId(cat.id)}
                   style={{ opacity: count === 0 ? 0.4 : 1 }}
                 >
@@ -69,8 +65,6 @@ const Delicious: FC = () => {
               );
             })}
           </div>
-
-          {/* ===== MENU ITEMS ===== */}
           <div className={scss.Allmenu}>
             {filteredMenus.length === 0 ? (
               <p className={scss.empty}>No items in this category</p>
@@ -90,9 +84,7 @@ const Delicious: FC = () => {
             )}
 
             <div className={scss.full}>
-              <button className={scss.buttonOutline}>
-                View Full Menu
-              </button>
+              <button className={scss.buttonOutline}>View Full Menu</button>
             </div>
           </div>
         </div>

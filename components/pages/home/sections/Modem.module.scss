@@ -13,7 +13,7 @@
       font-family: Shalimar;
     }
     @media (max-width: 650px) {
-      flex-direction: column;
+      // flex-direction: column;
       gap: 8px;
     }
   }
@@ -23,10 +23,6 @@
     font-size: 20px;
     letter-spacing: 2px;
     color: #ede7e7;
-
-    @media (max-width: 650px) {
-      font-size: 18px;
-    }
   }
 
   .gallery {
@@ -41,8 +37,8 @@
     }
 
     @media (max-width: 650px) {
-      grid-template-columns: 1fr;
-      grid-template-rows: auto;
+      // grid-template-columns: 1fr;
+      // grid-template-rows: auto;
       gap: 15px;
     }
   }
@@ -87,6 +83,20 @@
 
     @media (max-width: 1024px) {
       grid-row: auto;
+    }
+  }
+}
+@media (max-width: 650px) {
+  .Modem {
+    padding: 32px 20px;
+    .gallery {
+      .item {
+        width: 140px;
+        height: 210px;
+      }
+      .item:last-child{
+        display: none;
+      }
     }
   }
 }

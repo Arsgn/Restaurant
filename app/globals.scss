@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Silk+Serif&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -8,6 +12,7 @@
 
 html,
 body {
+  font-family: "Silk Serif", serif;
   background: #161d24;
   width: 100%;
   height: 100%;
@@ -21,7 +26,12 @@ body {
   margin-inline: auto;
   padding-inline: 30px;
 }
-h1,
-h2 {
-  font-family: "Courier New", Courier, monospace;
+h1 {
+  letter-spacing: 2px;
+  font-weight: 300;
+  // font-style: normal;
+}
+
+p {
+  font-family: "League Spartan", sans-serif;
 }

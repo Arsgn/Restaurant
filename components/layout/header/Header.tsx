@@ -1,9 +1,9 @@
 "use client";
-
+import { GiHamburgerMenu } from "react-icons/gi";
 import { FC, useState } from "react";
 import scss from "./Header.module.scss";
 import Link from "next/link";
-
+import { IoClose } from "react-icons/io5";
 const translations = {
   en: {
     interior: "Interior",
@@ -23,7 +23,7 @@ const translations = {
 
 const Header: FC = () => {
   const [lang, setLang] = useState<"en" | "ru">("en");
-  const [menuOpen, setMenuOpen] = useState(false); 
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const t = translations[lang];
 
@@ -34,23 +34,33 @@ const Header: FC = () => {
           <Link href="/">
             <h1 className={scss.title}>Restaurant</h1>
           </Link>
-
-          <div
-            className={`${scss.burger} ${menuOpen ? scss.active : ""}`}
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            <span></span>
-            <span></span>
-            <span></span>
+          <div className={scss.icon}>
+            {menuOpen ? (
+              <IoClose
+                className={scss.burger}
+                onClick={() => setMenuOpen(false)}
+              />
+            ) : (
+              <GiHamburgerMenu
+                className={scss.burger}
+                onClick={() => setMenuOpen(true)}
+              />
+            )}
           </div>
-
           <nav className={menuOpen ? scss.active : ""}>
-            <Link href="/">{t.interior}</Link>
-            <Link href="/about">{t.about}</Link>
-            <Link href="/menu">{t.menu}</Link>
-            <Link href="/contacts">{t.contacts}</Link>
+            <Link href="/" onClick={() => setMenuOpen(false)}>
+              {t.interior}
+            </Link>
+            <Link href="/about" onClick={() => setMenuOpen(false)}>
+              {t.about}
+            </Link>
+            <Link href="/menu" onClick={() => setMenuOpen(false)}>
+              {t.menu}
+            </Link>
+            <Link href="/contacts" onClick={() => setMenuOpen(false)}>
+              {t.contacts}
+            </Link>
           </nav>
-
           <div className={scss.btn}>
             <button>{t.search}</button>
             <span

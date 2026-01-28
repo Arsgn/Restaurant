@@ -40,8 +40,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
+        style={{ fontFamily: '"Silk Serif", serif' }}
         className={`${geistSans.variable} ${geistMono.variable} antialiased ${silkSerif.variable} ${shalimar.variable}`}
       >
+        <link
+          href="https://fonts.googleapis.com/css2?family=Silk+Serif&display=swap"
+          rel="stylesheet"
+        />
         <LayoutClient>{children}</LayoutClient>
       </body>
     </html>

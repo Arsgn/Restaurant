@@ -21,7 +21,9 @@ export const Welcome: FC = () => {
             <span className={scss.subtitle}>Delicious</span>
             <Image src="/Frame 9.svg" alt="image" width={90} height={25} />
           </div>
-          <h1 className={scss.title}>Italian Cuisine</h1>
+          <h1 style={{ fontFamily: "Silk Serif" }} className={scss.title}>
+            Italian Cuisine
+          </h1>
           <p className={scss.text}>
             Classic steak & delicious with delightfully unexpected twists. The
             restaurant’s sunny decor was inspired by the diners.

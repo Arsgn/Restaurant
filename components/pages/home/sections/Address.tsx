@@ -11,7 +11,6 @@ const Address: FC = () => {
               <Image src="/Frame 9.svg" alt="logo" width={50} height={40} />
               <span>Visit Restaurant</span>
             </div>
-
             <h2 className={scss.title}>
               Join Us for <br /> Happy Hours
             </h2>

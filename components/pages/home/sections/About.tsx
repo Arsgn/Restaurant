@@ -10,7 +10,6 @@ export const About: FC = () => {
         <div className={scss.content}>
           <div className={scss.leftSide}>
             <div className={scss.header}>
-              <div className={scss.line}></div>
               <h3 className={scss.subtitle}>About Us</h3>
             </div>
             <h2 className={scss.title}>
