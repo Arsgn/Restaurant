@@ -4,6 +4,8 @@ import { FC, useState } from "react";
 import scss from "./Header.module.scss";
 import Link from "next/link";
 import { IoClose } from "react-icons/io5";
+import { CiSearch } from "react-icons/ci";
+
 const translations = {
   en: {
     interior: "Interior",
@@ -34,19 +36,7 @@ const Header: FC = () => {
           <Link href="/">
             <h1 className={scss.title}>Restaurant</h1>
           </Link>
-          <div className={scss.icon}>
-            {menuOpen ? (
-              <IoClose
-                className={scss.burger}
-                onClick={() => setMenuOpen(false)}
-              />
-            ) : (
-              <GiHamburgerMenu
-                className={scss.burger}
-                onClick={() => setMenuOpen(true)}
-              />
-            )}
-          </div>
+          
           <nav className={menuOpen ? scss.active : ""}>
             <Link href="/" onClick={() => setMenuOpen(false)}>
               {t.interior}
@@ -62,13 +52,26 @@ const Header: FC = () => {
             </Link>
           </nav>
           <div className={scss.btn}>
-            <button>{t.search}</button>
+            <CiSearch />
             <span
               className={scss.lang}
               onClick={() => setLang(lang === "en" ? "ru" : "en")}
             >
               {lang.toUpperCase()}
             </span>
+          </div>
+          <div className={scss.icon}>
+            {menuOpen ? (
+              <IoClose
+                className={scss.burger}
+                onClick={() => setMenuOpen(false)}
+              />
+            ) : (
+              <GiHamburgerMenu
+                className={scss.burger}
+                onClick={() => setMenuOpen(true)}
+              />
+            )}
           </div>
         </div>
       </div>
