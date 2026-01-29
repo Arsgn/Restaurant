@@ -1,7 +1,10 @@
+"use client";
 import { FC } from "react";
 import scss from "./Address.module.scss";
 import Image from "next/image";
+import { useLangStore } from "@/store/lang.store";
 const Address: FC = () => {
+  const t = useLangStore((s) => s.t);
   return (
     <section className={scss.Contact}>
       <div className="container">
@@ -9,12 +12,10 @@ const Address: FC = () => {
           <div className={scss.left}>
             <div className={scss.subtitle}>
               <Image src="/Frame 9.svg" alt="logo" width={50} height={40} />
-              <span>Visit Restaurant</span>
+              <span>{t("address.visit")}</span>
             </div>
 
-            <h2 className={scss.title}>
-              Join Us for <br /> Happy Hours
-            </h2>
+           <h2>{t("address.title")}</h2>
 
             <p className={scss.label}>Your neighborhood</p>
             <p className={scss.text}>
@@ -28,7 +29,7 @@ const Address: FC = () => {
               Fri-Sun: 10:00 am – 02:00 am
             </p>
 
-            <button className={scss.button}>PURCHASE GIFT CARD →</button>
+            <button>{t("address.button")}</button>
           </div>
 
           <div className={scss.card}>

@@ -3,7 +3,7 @@ import Address from "./sections/Address";
 import { BestSellers } from "./sections/BestSellers";
 import Delicious from "./sections/Delicious";
 import Modem from "./sections/Modem";
-import { Welcome } from "./sections/Welcome";
+import Welcome from "./sections/Welcome";
 import { FC } from "react";
 
 

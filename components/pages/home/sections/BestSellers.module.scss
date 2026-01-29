@@ -1,95 +1,103 @@
+.BestSellers {
+  color: #fff;
+}
+
 .block {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 60px;
-  padding-block: 80px;
-  padding-inline: 20px; 
+  gap: 80px;
+  padding: 80px 0;
 
   @media (max-width: 950px) {
     flex-direction: column;
     gap: 40px;
-    padding-block: 60px;
-  }
-
-  @media (max-width: 650px) {
-    padding-block: 40px;
   }
 }
 
 .content {
+  max-width: 480px;
+
   h2 {
-    font-size: 40px;
+    font-size: 42px;
     font-weight: 700;
-    margin: 18px 0 16px;
-    color: white;
-
-    @media (max-width: 950px) {
-      font-size: 34px;
-    }
-
-    @media (max-width: 650px) {
-      font-size: 28px;
-    }
+    margin: 20px 0;
   }
 
   p {
     font-size: 16px;
     line-height: 1.7;
-    color: white;
-
-    @media (max-width: 650px) {
-      font-size: 14px;
-      line-height: 1.5;
-    }
+    color: #cfcfcf;
   }
 }
 
 .subtitleWrapper {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 8px 14px;
+  gap: 12px;
 
   p {
-    font-size: 19px;
-    font-weight: 600;
     color: #ff7a45;
-
-    @media (max-width: 650px) {
-      font-size: 16px;
-    }
+    font-weight: 600;
+    font-size: 18px;
   }
+}
 
-  img {
-    width: 50px;
-    height: 30px;
+.slider {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
 
-    @media (max-width: 650px) {
-      width: 40px;
-      height: 24px;
-    }
-  }
+.imagesWrapper {
+  overflow: hidden;
+  width: calc(260px * 2 + 24px);
 }
 
 .images {
   display: flex;
   gap: 24px;
-  flex-wrap: wrap; 
-  justify-content: center; 
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
 
   img {
-    transition: 0.5s;
-    width: 100%; 
-    max-width: 200px; 
-    height: auto;
-
-    &:hover {
-      transform: translateY(-8px) scale(1.03);
-    }
-
-    @media (max-width: 650px) {
-      max-width: 150px;
-    }
+    object-fit: cover;
   }
+}
+
+.arrow {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 48px;
+    height: 48px;
+  }
+
+  &:hover:not(:disabled) {
+    opacity: 0.8;
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+}
+
+.arrowLeft {
+  transform: rotate(180deg);
 }

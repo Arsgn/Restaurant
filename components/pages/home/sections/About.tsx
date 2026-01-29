@@ -2,8 +2,10 @@
 import { FC } from "react";
 import scss from "./About.module.scss";
 import Image from "next/image";
+import { useLangStore } from "@/store/lang.store";
 
 export const About: FC = () => {
+  const t = useLangStore((s) => s.t);
   return (
     <section className={scss.About}>
       <div className="container">
@@ -11,23 +13,15 @@ export const About: FC = () => {
           <div className={scss.leftSide}>
             <div className={scss.header}>
               <div className={scss.line}></div>
-              <h3 className={scss.subtitle}>About Us</h3>
+              <h3>{t("about.subtitle")}</h3>
+
             </div>
-            <h2 className={scss.title}>
-              A Journey Throught
-              <br />
-              Cafesio Flavors
-            </h2>
+            <h2>{t("about.title")}</h2>
           </div>
 
           <div className={scss.rightSide}>
             <div className={scss.descriptionBox}>
-              <p className={scss.description}>
-                Try dishes that will open up new tastes for you and delight your
-                eyes with their appearance. Here you will find a cozy
-                atmosphere, excellent service and attention to each guest. Book
-                a table now and enjoy a unique experience of taste discovery!
-              </p>
+              <p>{t("about.text")}</p>
             </div>
           </div>
         </div>

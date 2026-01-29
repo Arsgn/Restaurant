@@ -4,11 +4,13 @@ import scss from "./Delicious.module.scss";
 import Image from "next/image";
 import { useGetMenusQuery } from "@/api/menu";
 import { useGetCategoriesQuery } from "@/api/category";
+import { useLangStore } from "@/store/lang.store";
 
 const Delicious: FC = () => {
   const { data: menuData, isLoading: menuLoading } = useGetMenusQuery();
   const { data: categoryData, isLoading: categoryLoading } =
-    useGetCategoriesQuery();
+  useGetCategoriesQuery();
+  const t = useLangStore((s) => s.t);
 
   const [selectedCategoryId, setSelectedCategoryId] = useState<number | null>(
     null,
@@ -46,10 +48,10 @@ const Delicious: FC = () => {
         <div className={scss.title}>
           <div className={scss.content}>
             <Image src="/Frame 9.svg" alt="left" width={60} height={30} />
-            <h2>Main Menu</h2>
+            <h2>{t("delicious.menu")}</h2>
             <Image src="/Frame 10.svg" alt="right" width={60} height={30} />
           </div>
-          <h1>Exceptional Quality. Delightfully Delicious</h1>
+          <h1>{t("delicious.title")}</h1>
         </div>
 
         <div className={scss.menu_block}>
@@ -107,7 +109,7 @@ const Delicious: FC = () => {
                 )}
               </div>
             ) : filteredMenus.length === 0 ? (
-              <p className={scss.empty}>No items in this category</p>
+              <p>{t("delicious.empty")}</p>
             ) : (
               filteredMenus.map((menu) => (
                 <div
@@ -120,7 +122,7 @@ const Delicious: FC = () => {
                     <span>${menu.price}</span>
                   </div>
                   <p>{menu.description}</p>
-                  <button>Order Now</button>
+                  <button>{t("delicious.order")}</button>
                 </div>
               ))
             )}
